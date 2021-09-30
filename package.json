@@ -1,9 +1,12 @@
 {
   "dependencies": {
+    "@vitalets/google-translate-api": "^7.0.0",
+    "axios": "^0.21.4",
     "discord.js": "^13.1.0",
     "dotenv": "^10.0.0",
     "nodemon": "^2.0.13",
     "nodeno-town": "^1.0.2",
+    "translate": "^1.4.0",
     "ts-node": "^10.2.1",
     "tsc-watch": "^4.5.0"
   },
