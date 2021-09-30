@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "discord.js": "^13.1.0",
+    "dotenv": "^10.0.0",
+    "nodemon": "^2.0.13",
+    "nodeno-town": "^1.0.2",
+    "ts-node": "^10.2.1",
+    "tsc-watch": "^4.5.0"
+  },
+  "name": "piq",
+  "version": "1.0.0",
+  "main": "./dist/main.js",
+  "scripts": {
+    "dev": "tsc-watch --onSuccess \"node .\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
