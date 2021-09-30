@@ -2,8 +2,8 @@ import * as fs from 'fs';
 import "dotenv/config"
 import Discord, { Command } from "discord.js";
 
-const { TOKEN } = process.env
-const PREFIX = '#'
+const TOKEN = process.env.TOKEN as string
+const PREFIX = process.env.PREFIX as string
 
 const client = new Discord.Client({
     intents: [
@@ -11,6 +11,7 @@ const client = new Discord.Client({
         Discord.Intents.FLAGS.GUILD_MESSAGES,
     ]
 })
+
 client.commands = new Discord.Collection();
 
 
@@ -53,8 +54,9 @@ client.on("messageCreate", async (message) => {
 
         // Executing command dynamically by command name
         await command.execute(message, args);
+
     } catch (error) {
-        await message.reply(`Failed to execute the command: ${(error as Error).message}`);
+        await message.reply(`Failed to execute the command`);
     }
 });
 
