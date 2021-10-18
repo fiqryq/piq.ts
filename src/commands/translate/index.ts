@@ -8,7 +8,22 @@ const command: Command = {
         const [lang, ...words]: Array<string> = args
         const word = words.join(' ')
         translate(word, { to: lang }).then(res => {
-            message.reply(res.text)
+            const embedMessage = {
+                "fields": [
+                    {
+                        "name": `From ${res.from.language.iso}`,
+                        "value": word,
+                        "inline": false
+                    },
+                    {
+                        "name": `To ${lang}`,
+                        "value": res.text,
+                        "inline": false
+                    }
+                ]
+            }
+            console.log(res)
+            message.channel.send({ embeds: [embedMessage] });
         }).catch(err => {
             console.error(err);
         });
